@@ -25,6 +25,8 @@ jobs:
 
             *Репозиторий:* ${{ github.repository }}
 
+            [inline URL](http://www.example.com/)
+
             *Изменения:* https://github.com/${{ github.repository }}/commit/${{github.sha}}
 
             *Проверить, что мы не уронили прод:* http://${{ secrets.HOST }}/redoc/
