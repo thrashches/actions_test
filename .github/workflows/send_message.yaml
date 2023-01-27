@@ -15,6 +15,7 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
           message: |
             *${{ github.workflow }}*
             *${{ github.actor }}* сделал коммит в ```master```.
