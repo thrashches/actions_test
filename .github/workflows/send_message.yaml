@@ -17,7 +17,8 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            *${{ github.workflow }}*
+            **${{ github.workflow }}**
+
             *${{ github.actor }}* сделал коммит в ```master```.
 
             Сообщение к коммиту: ${{ github.event.commits[0].message }}
