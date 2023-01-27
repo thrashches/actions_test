@@ -1,0 +1,29 @@
+name: send_message.yaml CI
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  send_message:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: send message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            *${{ github.workflow }}*
+            *${{ github.actor }}* сделал коммит в ```master```.
+
+            Сообщение к коммиту: ${{ github.event.commits[0].message }}
+            
+            Репозиторий: ${{ github.repository }}
+            
+            Изменения: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+            
+            Проверить, что мы не уронили прод: http://${{ secrets.HOST }}/redoc/
