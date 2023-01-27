@@ -21,10 +21,10 @@ jobs:
 
             *${{ github.actor }}* сделал коммит в ```master```.
 
-            Сообщение к коммиту: ${{ github.event.commits[0].message }}
+            *Сообщение к коммиту:* ${{ github.event.commits[0].message }}
 
-            Репозиторий: ${{ github.repository }}
+            *Репозиторий:* ${{ github.repository }}
 
-            Изменения: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+            *Изменения:* https://github.com/${{ github.repository }}/commit/${{github.sha}}
 
-            Проверить, что мы не уронили прод: http://${{ secrets.HOST }}/redoc/
+            *Проверить, что мы не уронили прод:* http://${{ secrets.HOST }}/redoc/
