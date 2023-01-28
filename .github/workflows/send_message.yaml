@@ -20,7 +20,7 @@ jobs:
             <b>${{ github.workflow }}</b>
 
             <b>${{ github.actor }}</b> сделал коммит в <code>master</code>.
-            <b>Сообщение к коммиту:</b <code>${{ github.event.commits[0].message }}</code>
+            <b>Сообщение к коммиту:</b> <code>${{ github.event.commits[0].message }}</code>
             <b>Репозиторий:</b> <code>${{ github.repository }}</code>
 
             <a href="https://github.com/${{ github.repository }}/commit/${{github.sha}}">Изменения</a>
