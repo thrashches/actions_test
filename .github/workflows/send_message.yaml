@@ -15,14 +15,14 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: markdown
+          format: html
           message: |
-            *${{ github.workflow }}*
+            <b>${{ github.workflow }}</b>
 
-            *${{ github.actor }}* сделал коммит в ```master```.
-            *Сообщение к коммиту:* ```${{ github.event.commits[0].message }}```
-            *Репозиторий:* ```${{ github.repository }}```
+            <b>${{ github.actor }}</b> сделал коммит в <code>master</code>.
+            <b>Сообщение к коммиту:</b <code>${{ github.event.commits[0].message }}</code>
+            <b>Репозиторий:</b> <code>${{ github.repository }}</code>
 
-            [Изменения](https://github.com/${{ github.repository }}/commit/${{github.sha}})
+            <a href="https://github.com/${{ github.repository }}/commit/${{github.sha}}">Изменения</a>
 
-            [Проверить, что мы не уронили прод](http://${{ secrets.HOST }}/redoc/)
+            <a href="http://${{ secrets.HOST }}/redoc/">Проверить что не упал прод</a>
