@@ -2,6 +2,8 @@
 
 ## send_message.yaml [ [link](.github/workflows/send_message.yaml) ]
 
+![send_message](https://github.com/thrashches/actions_test/actions/workflows/send_message.yaml/badge.svg)
+
 Это пример для отправки сообщения через Telegram.
 Для работы примера в Secrets репозитория должны быть следующие переменные:
 
